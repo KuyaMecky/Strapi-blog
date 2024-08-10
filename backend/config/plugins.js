@@ -1,5 +1,14 @@
 module.exports = ({ env }) => ({
-  seo: {
-    enabled: true,
+  plugins: {
+    seo: {
+      enabled: true,
+    },
+    migrations: {
+      enabled: true,
+      config: {
+        autoStart: true,
+        migrationFolderPath: 'migrations'
+      },
+    },
   },
 });
