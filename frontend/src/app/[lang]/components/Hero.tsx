@@ -44,14 +44,14 @@ export default function Hero({ data }: HeroProps) {
             text={data.title}
             tag="h1"
             className="text-5xl font-bold leading-none sm:text-6xl mb-8"
-            color="dark:text-violet-400"
+            color="dark:text-red-400"
           />
 
           <HighlightedText
             text={data.description}
             tag="p"
             className="tmt-6 mb-8 text-lg sm:mb-12"
-            color="dark:text-violet-400"
+            color="dark:text-red-400"
           />
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
             {data.buttons.map((button: Button, index: number) => (

@@ -3,11 +3,11 @@ import classNames from "classnames";
 function colors(type: string) {
   switch (type) {
     case "info":
-      return "bg-violet-400";
+      return "bg-red-400";
     case "warning":
       return "bg-yellow-500";
     case "alert":
-      return "bg-pink-500";
+      return "bg-red-500";
     default:
       return "bg-gray-900";
   }

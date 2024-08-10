@@ -25,7 +25,7 @@ function Feature({ title, description, showLink, newTab, url, text }: Feature) {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill="currentColor"
-        className="w-8 h-8 dark:text-violet-400"
+        className="w-8 h-8 dark:text-red-400"
       >
         <path
           fillRule="evenodd"
@@ -42,7 +42,7 @@ function Feature({ title, description, showLink, newTab, url, text }: Feature) {
           <Link
             href={url}
             target={newTab ? "_blank" : "_self"}
-            className="inline-block px-4 py-2 mt-4 text-sm font-semibold text-white transition duration-200 ease-in-out bg-violet-500 rounded-lg hover:bg-violet-600"
+            className="inline-block px-4 py-2 mt-4 text-sm font-semibold text-white transition duration-200 ease-in-out bg-red-500 rounded-lg hover:bg-red-600"
           >
             {text}
           </Link>
