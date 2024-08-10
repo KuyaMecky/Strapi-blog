@@ -2001,7 +2001,7 @@
     react-redux "8.1.1"
     yup "0.32.9"
 
-"@strapi/plugin-seo@^1.9.8":
+"@strapi/plugin-seo@^1.9.9":
   version "1.9.9"
   resolved "https://registry.yarnpkg.com/@strapi/plugin-seo/-/plugin-seo-1.9.9.tgz#325b73e36ebfe7bab84e3c325a863ec56776a170"
   integrity sha512-JBJqh1AgGUmaZhM1HjZO7JYwnJffqCc+E30impZMq/GSctJrukeh8ju/UtHOQQeekAbeMc7lhtdRXwqrdb2+Cg==

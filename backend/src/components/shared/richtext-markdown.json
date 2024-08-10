@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_richtext_markdown_s",
+  "info": {
+    "displayName": "richtext(markdown)",
+    "icon": "code"
+  },
+  "options": {},
+  "attributes": {
+    "markdown": {
+      "type": "richtext"
+    }
+  }
+}

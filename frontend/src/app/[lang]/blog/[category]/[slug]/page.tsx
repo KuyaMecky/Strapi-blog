@@ -1,6 +1,10 @@
 import { fetchAPI } from '@/app/[lang]/utils/fetch-api';
 import Post from '@/app/[lang]/views/post';
 import type { Metadata } from 'next';
+// Remove the import statement if the module is not needed
+// import { RichText1 } from './RichText2';
+
+
 
 async function getPostBySlug(slug: string) {
     const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
@@ -38,18 +42,29 @@ async function getMetaData(slug: string) {
     };
     const options = { headers: { Authorization: `Bearer ${token}` } };
     const response = await fetchAPI(path, urlParamsObject, options);
+    console.log(response); // Add this line
     return response.data;
 }
 
+
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const meta = await getMetaData(params.slug);
+    
+    if (!meta || meta.length === 0 || !meta[0].attributes.seo) {
+        return {
+            title: 'Default Title',
+            description: 'Default Description',
+        };
+    }
+
     const metadata = meta[0].attributes.seo;
 
     return {
-        title: metadata.metaTitle,
-        description: metadata.metaDescription,
+        title: metadata.metaTitle || 'Default Title',
+        description: metadata.metaDescription || 'Default Description',
     };
 }
+
 
 export default async function PostRoute({ params }: { params: { slug: string } }) {
     const { slug } = params;
@@ -69,7 +84,7 @@ export async function generateStaticParams() {
         },
         options
     );
-
+    if (!articleResponse.data) return [];
     return articleResponse.data.map(
         (article: {
             attributes: {

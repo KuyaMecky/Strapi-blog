@@ -38,6 +38,17 @@ export interface SharedSeo extends Schema.Component {
   };
 }
 
+export interface SharedRichtextMarkdown extends Schema.Component {
+  collectionName: 'components_shared_richtext_markdown_s';
+  info: {
+    displayName: 'richtext(markdown)';
+    icon: 'code';
+  };
+  attributes: {
+    markdown: Attribute.RichText;
+  };
+}
+
 export interface SharedRichText extends Schema.Component {
   collectionName: 'components_shared_rich_texts';
   info: {
@@ -88,18 +99,6 @@ export interface SectionsTestimonialsGroup extends Schema.Component {
     title: Attribute.String;
     description: Attribute.Text;
     testimonials: Attribute.Component<'elements.testimonial', true>;
-  };
-}
-
-export interface SectionsRichText extends Schema.Component {
-  collectionName: 'components_sections_rich_texts';
-  info: {
-    name: 'RichText';
-    displayName: 'Rich text';
-    icon: 'text-height';
-  };
-  attributes: {
-    content: Attribute.RichText;
   };
 }
 
@@ -481,11 +480,11 @@ declare module '@strapi/types' {
       'shared.video-embed': SharedVideoEmbed;
       'shared.slider': SharedSlider;
       'shared.seo': SharedSeo;
+      'shared.richtext-markdown': SharedRichtextMarkdown;
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
       'sections.testimonials-group': SectionsTestimonialsGroup;
-      'sections.rich-text': SectionsRichText;
       'sections.pricing': SectionsPricing;
       'sections.lead-form': SectionsLeadForm;
       'sections.large-video': SectionsLargeVideo;

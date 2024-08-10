@@ -1061,7 +1061,6 @@ export interface ApiPagePage extends Schema.CollectionType {
         'sections.feature-rows-group',
         'sections.testimonials-group',
         'sections.large-video',
-        'sections.rich-text',
         'sections.pricing',
         'sections.lead-form',
         'sections.features',
